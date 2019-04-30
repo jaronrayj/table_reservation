@@ -1,0 +1,23 @@
+{
+  "name": "table_reservation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "reservations.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaronrayj/table_reservation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jaronrayj/table_reservation/issues"
+  },
+  "homepage": "https://github.com/jaronrayj/table_reservation#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
