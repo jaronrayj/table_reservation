@@ -32,7 +32,21 @@ app.get("/api/tables", function (req, res){
 });
 
 app.get("/api/waitlist", function (req, res){
-    return res.json(tables);
+    return res.json(waitlist);
+});
+
+app.post("/api/reserve", function (req, res){
+    let newReserve = req.body;
+
+    console.log(newReserve);
+
+    if (tables.length < 5){
+        tables.push(newReserve);
+    } else {
+        waitlist.push(newReserve);
+    }
+
+    res.json(newReserve);
 });
 
 app.listen(PORT, function() {
