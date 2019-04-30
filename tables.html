@@ -81,7 +81,7 @@
             var icon = `<span class="label label-primary">${count}</span>`;
 
             newHeader.append(icon).append(` | ${table.customerID}`)
-            
+
             $("#tableSection").append(newHeader);
             count++;
         }
@@ -96,10 +96,21 @@
             var icon = `<span class="label label-primary">${count}</span>`;
 
             newHeader.append(icon).append(` | ${table.customerID}`)
-            
+
             $("#waitlistSection").append(newHeader);
             count++;
         }
+    });
+
+    $("#clear").on("click", function () {
+        $.ajax({
+            type: "delete",
+            url: "/api/tables"
+        }).then(function () {
+            alert("Tables are clear!");
+            location.reload();
+        })
+        
     });
 </script>
 
