@@ -72,7 +72,35 @@
 
 <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
 <script type="text/javascript">
+    $.get("api/tables", function (req, res) {
+        var count = 1;
+        for (let i = 0; i < req.length; i++) {
+            var table = req[i];
+            console.log("TCL: table", table);
+            var newHeader = $("<h2>");
+            var icon = `<span class="label label-primary">${count}</span>`;
 
+            newHeader.append(icon).append(` | ${table.customerID}`)
+            
+            $("#tableSection").append(newHeader);
+            count++;
+        }
+    });
+
+    $.get("api/waitlist", function (req, res) {
+        var count = 1;
+        for (let i = 0; i < req.length; i++) {
+            var table = req[i];
+            console.log("TCL: table", table);
+            var newHeader = $("<h2>");
+            var icon = `<span class="label label-primary">${count}</span>`;
+
+            newHeader.append(icon).append(` | ${table.customerID}`)
+            
+            $("#waitlistSection").append(newHeader);
+            count++;
+        }
+    });
 </script>
 
 </html>
